@@ -1,0 +1,52 @@
+---
+layout: article
+---
+<section class="main-container">
+  <div class="container">
+    <div class="row">
+      <div class="main col-md-12">
+        <h1 class="page-title">{{ page.title }}</h1>
+        <div class="separator-2"></div>
+	    <div class="row">
+	      <div class="col-md-12">
+	        <ul class="nav nav-pills" role="tablist">
+	          <li class="active"><a href="#pill-1" role="tab" data-toggle="tab" title="images"><i class="fa fa-picture pr-5"></i> 产品图</a></li>
+			  <li><a href="#pill-2" role="tab" data-toggle="tab" title="video"><i class="fa fa-video-camera pr-5"></i> 操作视频</a></li>
+		    </ul>
+		    <div class="tab-content clear-style">
+		      <div class="tab-pane active" id="pill-1">
+			    <div class="owl-carousel content-slider-with-large-controls">
+				  <div class="overlay-container overlay-visible">
+				    <img src="/images/products/{{ page.image }}.jpg" alt="{{ page.title }}">
+				    <a href="/images/products/{{ page.image }}.jpg" class="popup-img overlay-link" title="{{ page.title }}"><i class="fa fa-search-plus"></i></a>
+				  </div>
+			    </div>
+			  </div>
+			  <div class="tab-pane" id="pill-2">
+			    <div class="embed-responsive embed-responsive-16by9">
+				  <iframe class="embed-responsive-item" src="http://player.youku.com/embed/{{ page.video }}"></iframe>
+			    </div>
+			  </div>
+		    </div>
+		  </div>
+	    </div>
+	  </div>
+    </div>
+  </div>
+</section>
+<section class="pv-30 light-gray-bg">
+  <div class="container">
+	<div class="row">
+	  <div class="col-md-12">
+	    <ul class="nav nav-tabs style-4" role="tablist">
+	      <li class="active"><a href="#h2tab2" role="tab" data-toggle="tab"><i class="fa fa-files-o pr-5"></i>产品概述</a></li>
+		  <li><a href="#h2tab3" role="tab" data-toggle="tab"><i class="fa fa-star pr-5"></i>产品参数</a></li>
+		  <li><a href="#h2tab4" role="tab" data-toggle="tab"><i class="fa fa-truck pr-5"></i>产品包装</a></li>
+		</ul>
+		<div class="tab-content padding-top-clear padding-bottom-clear">
+		  {{ content }}
+		</div>
+	  </div>
+	</div>
+  </div>
+</section>

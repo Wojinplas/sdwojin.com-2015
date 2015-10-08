@@ -1,0 +1,48 @@
+---
+layout: pages
+permalink: /news/
+category: news
+title: 新闻中心
+keywords: 发酵饲料袋排气阀
+description: 咖啡排气阀、排气阀压阀机、发酵饲料袋排气阀专业模具开发、生产、销售厂家沃进塑料为企业提供最新最快的高品质塑料单向排气阀行业新闻资讯。
+---
+<section class="main-container">
+  <div class="container">
+    <div class="row">
+      <div class="main col-md-12">
+        <h1 class="page-title">{{ page.title }}</h1>
+		<div class="separator-2"></div>
+		<div class="timeline clearfix">
+		  <div class="timeline-date-label clearfix">2015</div>{% for post in site.categories["news-2015"] %}
+		  <div class="timeline-item {{ post.position }}">
+		    <article class="blogpost shadow light-gray-bg bordered object-non-visible" data-animation-effect="fadeInUpSmall" data-effect-delay="100">
+		      <div class="overlay-container"><img src="{{ site.url }}/images/news/{{ post.image }}.jpg" alt="{{ post.title }}"></div>
+		      <header>
+		        <h2><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></h2>
+				<div class="post-info"><span class="post-date"><i class="icon-calendar"></i><span class="month">{{ post.date | date:"%Y年%m月%d日" }}</span></span></div>
+			  </header>
+			  <div class="blogpost-content"><p>{{ post.description }}</p></div>
+			  <footer class="clearfix">
+				<div class="link pull-right"><i class="icon-link"></i><a href="{{ site.url }}{{ post.url }}">阅读全文</a></div>
+			  </footer>
+			</article>
+		  </div>{% endfor %}
+		  <div class="timeline-date-label clearfix">2014</div>{% for post in site.categories["news-2014"] %}
+		  <div class="timeline-item {{ post.position }}">
+		    <article class="blogpost shadow light-gray-bg bordered object-non-visible" data-animation-effect="fadeInUpSmall" data-effect-delay="100">
+		      <div class="overlay-container"><img src="{{ site.url }}/images/news/{{ post.image }}.jpg" alt="{{ post.title }}"></div>
+		      <header>
+		        <h2><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></h2>
+				<div class="post-info"><span class="post-date"><i class="icon-calendar"></i><span class="month">{{ post.date | date:"%Y年%m月%d日" }}</span></span></div>
+			  </header>
+			  <div class="blogpost-content"><p>{{ post.description }}</p></div>
+			  <footer class="clearfix">
+				<div class="link pull-right"><i class="icon-link"></i><a href="{{ site.url }}{{ post.url }}">阅读全文</a></div>
+			  </footer>
+			</article>
+		  </div>{% endfor %}
+		</div>
+	  </div>
+	</div>
+  </div>
+</section>

@@ -1,0 +1,30 @@
+---
+layout: pages
+permalink: /products/
+category: products
+type-en: products
+title: 产品中心
+keywords: 咖啡排气阀,排气阀压阀机,发酵饲料袋排气阀
+description: 咖啡排气阀、排气阀压阀机、发酵饲料袋排气阀等专业高品质塑料单向排气阀产品厂家沃进塑料所有模具开发、生产、销售的产品展示。
+---
+<section class="main-container">
+  <div class="container">
+    <div class="row">
+      <div class="main col-md-12">
+        <h1 class="page-title">{{ page.title }}</h1>
+        <div class="separator-2"></div>
+		<div class="isotope-container-fitrows row grid-space-10">{% for post in site.categories["products"] %}
+		  <div class="col-sm-6 col-md-4 isotope-item">
+            <div class="image-box style-2 mb-20 shadow bordered light-gray-bg text-center">
+              <div class="overlay-container"><a href="{{ site.url }}{{ post.url }}"><img src="/images/products/{{ post.image }}.jpg" alt="{{ post.title }}"></a></div>
+	          <div class="body">
+	            <h3>{{ post.title }}</h3>
+	            <a href="{{ site.url }}{{ post.url }}" class="btn btn-default btn-hvr hvr-shutter-out-horizontal margin-clear">查看详情</a>
+	          </div>
+            </div>
+          </div>{% endfor %}
+		</div>
+	  </div>
+	</div>
+  </div>
+</section>

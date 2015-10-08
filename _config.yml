@@ -1,0 +1,26 @@
+url: http://www.sdwojin.com
+
+title: 沃进塑料
+
+keywords: 咖啡排气阀,排气阀压阀机,发酵饲料袋排气阀
+
+description: 咖啡排气阀、排气阀压阀机、发酵饲料袋排气阀等产品模具开发、生产、销售厂家沃进塑料为国内外企业提供专业高品质塑料单向排气阀产品。
+
+permalink: /products/:title.html
+
+relative_permalinks: false
+
+exclude:
+  - README.md
+
+assets:
+  dirname: assets
+  baseurl: /assets/
+  sources:
+    - _assets/js
+    - _assets/css
+  js_compressor: uglifier
+  css_compressor: sass
+  cache: true
+  cache_assets: true
+  gzip: []

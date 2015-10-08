@@ -1,0 +1,24 @@
+---
+layout: article
+---
+<section class="main-container">
+  <div class="container">
+    <div class="row">
+      <div class="main col-md-12">
+        <h1 class="page-title" style="text-align:center">{{ page.title }}</h1>
+        <article class="blogpost full">
+          <header>
+            <div class="post-info" style="text-align:center">
+              <span class="post-date"><i class="icon-calendar"></i><span class="month">{{ page.date | date:"%Y年%m月%d日" }}</span></span>
+            </div>
+          </header>
+          <div class="blogpost-content">
+            <div style="text-indent:2em">
+			        {{ content }}
+			      </div>
+		      </div>
+		    </article>
+	    </div>
+	  </div>
+  </div>
+</section>

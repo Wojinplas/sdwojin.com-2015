@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<!--[if IE 9]> <html lang="zh" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="zh">
+  <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <title>{% if page.full_title %}{{ page.full_title }}{% else %}{% if page.title %}{{ page.title }}-{% endif %}{{ site.title }}{% endif %}</title>
+    <meta name="keywords" content="{% if page.keywords %}{{ page.keywords }}{% else %}{{ site.keywords }}{% endif %}">
+    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    <link rel="canonical" href="{{ site.url }}{{ page.url | replace:'index.html','' }}">
+    <meta name="applicable-device" content="pc,mobile">
+    <link rel="apple-touch-icon" href="{{ site.url }}/images/assets/wojin-icon.jpg">
+    <meta name="apple-mobile-web-app-title" content="沃进塑料">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% stylesheet application %}
+  </head>
+  <body class="no-trans front-page transparent-header">
+    <div class="scrollToTop circle"><i class="fa fa-chevron-up"></i></div>
+    <div class="page-wrapper">
+      <div class="header-container">
+        <header class="header fixed clearfix">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-3">
+                <div class="header-left clearfix">
+                  <div id="logo" class="logo"><a href="{{ site.url }}"><img id="logo_img" src="/images/assets/wojin-logo.png" alt="沃进logo"></a></div>
+                </div>
+              </div>
+              <div class="col-md-9">
+                <div class="header-right clearfix">
+                  <div class="main-navigation animated with-dropdown-buttons">
+                    <nav class="navbar navbar-default" role="navigation">
+                      <div class="container-fluid">
+                        <div class="navbar-header">
+                          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
+                            <span class="sr-only">导航</span>
+                          </button>
+                        </div>
+                        <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                          <ul class="nav navbar-nav">
+                            <li class="{% if page.category == 'home' %}active{% endif %}"><a href="{{ site.url }}">首页</a></li>
+                            <li class="{% if page.category == 'about' %}active{% endif %}"><a href="{{ site.url }}/about/">企业简介</a></li>
+                            <li class="{% if page.category == 'products' %}dropdown active{% elsif page.category == 'home' or page.category == 'about' or page.category == 'news' or page.category == 'contact' %}dropdown{% endif %}">
+                              <a href="{{ site.url }}/products/" class="dropdown-toggle" data-toggle="dropdown">产品中心</a>
+                              <ul class="dropdown-menu">{% for post in site.categories["products"] %}
+                                <li><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></li>{% endfor %}
+                              </ul>
+                            </li>
+                            <li class="{% if page.category == 'news' %}active{% endif %}"><a href="{{ site.url }}/news/">新闻中心</a></li>
+                            <li class="{% if page.category == 'contact' %}active{% endif %}"><a href="{{ site.url }}/contact/">联系我们</a></li>
+                          </ul>   
+                        </div>
+                      </div>
+                    </nav>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+      </div>
+      {{ content }}
+      <footer id="footer" class="clearfix dark">
+        <div class="footer">
+          <div class="container">
+            <div class="footer-inner">
+              <div class="row">
+                <div class="col-md-3">
+                  <div class="footer-content">
+                    <h2 class="title"><a href="{{ site.url }}/about/">企业简介</a></h2>
+                    <div class="separator-2"></div>
+                    <p style="line-height:26px">佛山市顺德区勒流沃进塑料制品厂座落于全球高品质小家电生产工业基地－－顺德。沃进是一家拥有产品模具开发，生产，销售的专业塑料单向排气阀生产厂家。目前也是国内市场上唯一一家拥有自主品牌：WOJIN沃进®的企业。WOJIN沃进®付诸100%的专注于高品质的单向排气阀的生产厂家。<a href="{{ site.url }}/about/">了解更多<i class="fa fa-long-arrow-right pl-5"></i></a></p>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="footer-content">
+                    <h2 class="title"><a href="{{ site.url }}/news/">新闻中心</a></h2>
+                    <div class="separator-2"></div>{% for post in site.categories["news-2015"] limit:3 %}
+                    <div class="media margin-clear">
+                      <div class="media-left">
+                        <div class="overlay-container">
+                          <img class="media-object" src="/images/news/{{ post.image }}.jpg" alt="{{ post.title }}">
+                          <a href="{{ site.url }}{{ post.url }}" class="overlay-link small"><i class="fa fa-link"></i></a>
+                        </div>
+                      </div>
+                      <div class="media-body">
+                        <h6 class="media-heading"><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></h6>
+                        <p class="small margin-clear"><i class="fa fa-calendar pr-10"></i>{{ post.date | date:"%Y年%m月%d日" }}</p>
+                      </div>
+                      <hr>
+                    </div>{% endfor %}
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="footer-content">
+                    <h2 class="title"><a href="{{ site.url }}/products/">产品中心</a></h2>
+                    <div class="separator-2"></div>
+                    <div class="row grid-space-10">{% for post in site.categories["products"] %}
+                      <div class="col-xs-4 col-md-6">
+                        <div class="overlay-container mb-10">
+                          <img src="/images/products/{{ post.image }}-small.jpg" alt="{{ post.title }}">
+                          <a href="{{ site.url }}{{ post.url }}" class="overlay-link small"><i class="fa fa-search-plus"></i></a>
+                        </div>
+                      </div>{% endfor %}
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="footer-content">
+                    <h2 class="title"><a href="{{ site.url }}/contact/">联系我们</a></h2>
+                    <div class="separator-2"></div>
+                    <nav>
+                      <ul class="list-icons">
+                      <li><i class="fa fa-home pr-10"></i>广东省佛山市顺德区勒流沿江南路二街7号</li>
+                      <li><i class="fa fa-phone pr-10"></i><a href="tel:0757-29283720">0757-29283720</a></li>
+                      <li><i class="fa fa-phone pr-10"></i><a href="tel:0757-29390373">0757-29390373</a></li>
+                      <li><i class="fa fa-qq pr-10"></i><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=1592263910&site=qq&menu=yes">1592263910</a></li>
+                      <li><i class="fa fa-qq pr-10"></i><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin= 1742126404&site=qq&menu=yes">1742126404</a></li>
+                      <li><i class="fa fa-weixin pr-10"></i><a href="/images/assets/weixin.jpg" class="popup-img" title="沃进官方微信">WOJIN沃进单向排气阀</a></li>
+                      </ul>
+                    </nav>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="subfooter">
+          <div class="container">
+            <div class="subfooter-inner">
+              <div class="row">
+                <div class="col-md-12">
+                  <p class="text-center">Copyright © 2010-2015 佛山市顺德区勒流沃进塑料制品厂 | <a href="http://www.miitbeian.gov.cn/" target="_blank">粤ICP备15013639号-2</a> | <a href="{{ site.url }}/Sitemap.xml">Sitemap</a> | 网站建设与维护：<a href="http://osw.cc" target="_blank">开源网络</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    {% javascript application %}
+  </body>
+</html>
