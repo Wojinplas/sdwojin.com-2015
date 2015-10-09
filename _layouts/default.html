@@ -41,7 +41,7 @@
                           <ul class="nav navbar-nav">
                             <li class="{% if page.category == 'home' %}active{% endif %}"><a href="{{ site.url }}">首页</a></li>
                             <li class="{% if page.category == 'about' %}active{% endif %}"><a href="{{ site.url }}/about/">企业简介</a></li>
-                            <li class="{% if page.category == 'products' %}dropdown active{% elsif page.category == 'home' or page.category == 'about' or page.category == 'news' or page.category == 'contact' %}dropdown{% endif %}">
+                            <li class="{% if page.category == 'products' %}dropdown active{% else %}dropdown{% endif %}">
                               <a href="{{ site.url }}/products/" class="dropdown-toggle" data-toggle="dropdown">产品中心</a>
                               <ul class="dropdown-menu">{% for post in site.categories["products"] %}
                                 <li><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></li>{% endfor %}
